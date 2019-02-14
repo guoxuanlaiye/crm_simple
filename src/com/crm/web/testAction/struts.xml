@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="test" namespace="/test" extends="struts-default">
+		<action name="dynamicAction_*" class="com.crm.web.testAction.DynamicAction" method="{1}">
+			<result name="success">/jsp/test/dynamic_test.jsp</result>
+		</action>
+		<action name="testAction" class="com.crm.web.testAction.TestAction">
+			<result name="success">/jsp/test/test.jsp</result>
+		</action>
+		<action name="servletAction" class="com.crm.web.testAction.ServletAPIAction">
+			<result name="success">/jsp/test/test.jsp</result>
+		</action>
+		<action name="paramAction" class="com.crm.web.testAction.ParamAction">
+			<result name="success" type="dispatcher">/jsp/test/form_test.jsp</result>
+		</action>
+		<action name="DemoAction" class="com.crm.web.testAction.DemoAction">
+			<result name="success" type="dispatcher">/jsp/test/form1.jsp</result>
+		</action>
+		<action name="Demo2Action" class="com.crm.web.testAction.Demo2Action">
+			<result name="success" type="dispatcher">/jsp/test/form2.jsp</result>
+		</action>
+	</package>
+</struts>
